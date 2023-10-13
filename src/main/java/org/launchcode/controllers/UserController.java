@@ -23,6 +23,9 @@ public class UserController {
         if (user.getPassword().equals(verify)) {
             return "/user/index";
         } else {
+            model.addAttribute("error", true);
+            model.addAttribute("email", user.getEmail());
+            model.addAttribute("username", user.getUsername());
             return "/user/add";
         }
 

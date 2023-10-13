@@ -7,15 +7,16 @@
 </head>
 <body>
 <h1>New User Sign Up</h1>
+<h4 th:if="${error}" style="color:red">Both password entries must match</h4>
 <form method="post" action="/user">
     <div class="form-group">
         <label>Email
-            <input type="email" name="email" />
+            <input type="email" name="email" th:value="${email}"/>
         </label>
     </div>
     <div class="form-group">
         <label>Username
-            <input type="text" name="username" />
+            <input type="text" name="username" th:value="${username}" />
         </label>
     </div>
     <div class="form-group">
